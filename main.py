@@ -1,7 +1,7 @@
 # GPT-3のライブラリ
 import openai
 
-# APIキー入力 osモジュールを使いwindows環境変数から入力
+# APIキー入力 ここではosモジュールを使いwindows環境変数から入力します
 # APIキーはここから https://platform.openai.com/account/api-keys
 import os
 GPT_API_KEY = os.getenv('GPT-3_API_KEY')
@@ -19,6 +19,9 @@ response = openai.ChatCompletion.create(
 )
 
 print(response)
+
+# 返答は response['choices'][0]['message']['content'] で取り出せます。
+# 使ったトークン数をresponse['usage']['total_tokens'] で見ることができます。
 
 # 下記はこのプログラムの実行結果です
 # {
